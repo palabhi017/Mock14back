@@ -22,7 +22,7 @@ blogRouter.get("/", async(req,res)=>{
         if(req.query.category){
             q.category = req.query.category
         }
-        if(req,query.title){
+        if(req.query.title){
             q.title = { $regex: req.query.title, $options: 'i'}
         }
         if(req.query.sort){
