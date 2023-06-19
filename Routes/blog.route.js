@@ -29,6 +29,7 @@ blogRouter.get("/", async(req,res)=>{
             sort.date = +req.query.date
         }
         let blog = await blogModel.find(q).sort(sort).skip((page-1)*limit).limit(limit)
+        console.log(blog)
         res.json({"blog": blog})
     } catch (error) {
         res.send(error)

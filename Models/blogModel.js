@@ -6,9 +6,9 @@ const blogSchema = new mongoose.Schema({
     content: String, 
     category : String,
 	date : String,
-	likes : Number,
+	likes : [String],
     userId:String,
-	comments : [{username : String, content : String}]
+	comments : [{username : String, comment : String}]
 })
 
 const blogModel = mongoose.model("blog",blogSchema)
